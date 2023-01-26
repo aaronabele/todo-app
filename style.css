@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background-color: rgb(138, 160, 250);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+button {
+  background-color: blue;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px 2px darkblue;
+  cursor: pointer;
+  color: white;
+  padding: 0.5rem;
+  margin-left: 1rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#removeDoneTodos {
+  margin: 2rem;
+}
+
+ul {
+  list-style: none;
+  font-size: 1.2rem;
+  padding: 0;
+  font-size: 1.5rem;
+}
