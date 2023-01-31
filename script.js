@@ -7,12 +7,13 @@ const state = {
 
 const btn = document.querySelector("#add-todo");
 const ipt = document.querySelector("input");
+const list = document.querySelector("#list");
 
 btn.addEventListener("click", () => {
   if (ipt.value.length === 0) {
     alert("Please enter a Task");
   } else {
-    const newTodo = [];
+    const newTodo = {};
 
     newTodo.description = ipt.value;
     newTodo.done = false;
@@ -23,7 +24,6 @@ btn.addEventListener("click", () => {
 });
 
 function renderTodos() {
-  const list = document.querySelector("#list");
   list.innerHTML = "";
 
   state.todos.forEach((todo) => {
@@ -34,8 +34,7 @@ function renderTodos() {
     checkbox.checked = todo.done;
 
     checkbox.addEventListener("change", (e) => {
-      const newTodoDoneState = e.target.checked;
-      todo.done = newTodoDoneState;
+      todo.done = e.target.checked;
     });
 
     todoLi.appendChild(checkbox);
@@ -50,7 +49,6 @@ renderTodos();
 const removeBtn = document.querySelector("#removeDoneTodos");
 
 removeBtn.addEventListener("click", () => {
-  const notDoneObjects = state.todos.filter((todo) => todo.done === false);
-  state.todos = notDoneObjects;
+  state.todos = state.todos.filter((todo) => todo.done === false);
   renderTodos();
 });
